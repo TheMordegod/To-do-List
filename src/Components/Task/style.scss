@@ -1,0 +1,66 @@
+$incomplete-task-color: rgb(255, 119, 119);
+$completed-task-color: rgb(82, 189, 82);
+
+.taskContainer.complete {
+    background-color: $completed-task-color ;
+
+    &:hover {
+        background: darken($completed-task-color, $amount: 10%);
+    }
+
+    .taskControls {
+
+        .taskButton {
+            background-color: rgba(255, 255, 255, 0);
+
+                    
+            &:hover{
+                background: lighten($completed-task-color, $amount: 10%);         
+            }
+        }
+    }
+}
+
+.taskContainer { 
+    background-color: $incomplete-task-color ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+
+    &:hover{
+        background: darken($incomplete-task-color, $amount: 8%);
+        transition: 250ms ease-in-out;
+    }
+
+    .taskData {
+       display: flex;
+       flex-direction: column;
+       text-align: center;
+       font-size: 1.5rem;
+    }
+
+    .taskControls {
+        display: flex;
+        justify-content: space-around;
+        width: 100px;
+
+        :hover{
+            background-color: lighten($incomplete-task-color, $amount: 10%);
+            cursor: pointer;
+        }
+
+        .taskButton {
+            padding: 0.4rem;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(255, 255, 255, 0);
+
+            &:hover {
+                background: lighten($incomplete-task-color, $amount: 10%);         
+            }
+        }
+    }
+}
