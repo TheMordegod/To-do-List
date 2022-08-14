@@ -1,0 +1,79 @@
+$fontSize: 2rem;
+
+.modalShadow{
+    position: fixed;
+    margin: 0;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.658);
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modalMenu {
+        overflow: hidden;
+        box-sizing: border-box;
+        background-color: white;
+        color: black;
+        padding: 1.5rem;
+        border-radius: 24px;
+        min-width: 40%;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            font-size: $fontSize;
+
+            .closeButton {
+                font-size: $fontSize;
+                background-color: white;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+            }
+        } 
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+
+            .modalButton {
+                font-family: 'Mouse Memoirs', sans-serif;
+                font-size: 2rem;
+                width: 100%;
+                padding: 1rem;
+                background-color: rgb(67, 182, 67);
+                margin: 8px 0;
+                border-radius: 8px;
+                border: none;
+
+                &:hover {
+                    background-color: rgb(109, 190, 109);
+                    cursor: pointer;
+                }
+            }
+
+            label {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .modalInput {
+                padding: 1rem;
+                margin: 1rem 0 2rem 0;
+                font-size: 1.5rem; 
+                border-radius: 24px;
+                border-width: 1px;
+                
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,141 @@
+@mixin centered-element {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Mouse Memoirs', sans-serif;
+}
+
+.main-content {
+    @include centered-element;
+    position: relative;
+    min-height: 100vh;
+   /* background-image: linear-gradient(#04c2f1, #aff3ff);*/
+    background-image: url(./image.jpg);
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+
+    .container {
+        width: 75vw;
+        margin: 3rem 1rem 10rem;
+        background-color: whitesmoke;
+        padding: 1rem 1rem 2.5rem 1rem;
+        border-radius: 1rem;
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.671);
+
+        .main-header {
+            margin-bottom: 1rem;
+
+            .title {
+                @include centered-element;
+                font-size: 1.5rem;
+
+                .ListChecks {
+                    margin-left: 1rem;
+                    font-size: 50px;
+                }
+            }
+
+            .interactions {
+                display: flex;
+                justify-content: center;
+
+                .task-search {
+                    border-width: 1px 0px 1px 1px;
+                    padding: 16px;
+                    font-size: 16px;
+                    width: 60%;
+                    border-radius: 20px 0 0 20px;
+
+                    &:focus {
+                        outline: 0;
+                    }
+                }
+
+                .open-button {
+                    @include centered-element;
+                    background-color: white;
+                    font-size: 30px;
+                    border-width: 1px 1px 1px 1px;
+                    min-width: 10px;
+                    width: 90px;
+                    border-radius: 0 20px 20px 0;
+                
+                    &:hover {
+                        opacity: 0.7;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 757px) {
+                margin-bottom: 200px;
+        }
+    }
+
+    .main-footer {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+        border-top: 1px white solid;
+        text-align: center;
+
+        .userBox {
+            color: white;
+            font-size: 24px;
+            width: 75%;
+            padding: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 'author author'
+                                 'portfolio dicionary'
+                                 'portfolio dicionary'
+                                 'year year';
+            .inform {
+                padding: 4px;
+                grid-area: author;
+                text-align: center;
+            }
+            .author {
+                grid-area: author;
+                border-bottom: 1px gray solid;
+            }
+
+            .portfolio {
+                grid-area: portfolio;
+                border-right: 1px gray solid;
+            }
+
+            .dicionary {
+                grid-area: dicionary;
+            }
+
+            .year {
+                grid-area: year;
+                border-top: 1px gray solid;
+            }
+
+            .footer-link{
+                text-decoration: none;
+                color: rgb(59, 59, 252);
+
+                &:hover{
+                    color: rgb(0, 195, 255);
+                    transition: 500ms;
+                }
+            }
+        }
+ 
+    }
+}
