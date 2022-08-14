@@ -9,20 +9,24 @@ interface ModalProps {
 }
 
 export function Modal({ toggleModal, updateTasks, taskList }: ModalProps) {
-    const [addTaskMenu, setAddTaskMenu] = useState(false)
+    const [isTaskMenuOpen, setIsTaskMenuOpen] = useState(false)
 
     function addTask() {
+        let datePattern = /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/
         let titleInput = document.getElementById('taskName') as HTMLInputElement
         let timeInput = document.getElementById('taskTime') as HTMLInputElement
 
-        let newTask = {
-            title: titleInput?.value,
-            time: timeInput?.value,
-        }
+        if(datePattern.test(timeInput.value)) {
+            let newTask = {
+                title: titleInput?.value,
+                time: timeInput?.value,
+            }
 
-        taskList.push(newTask)
-        updateTasks([...taskList])
-        return console.log(taskList)
+            taskList.push(newTask)
+            updateTasks([...taskList])
+            return console.log(taskList)
+        }
+        else {return alert('Error: Unknown date format!')}
     }
 
     function deleteAllTasks() {
@@ -31,22 +35,35 @@ export function Modal({ toggleModal, updateTasks, taskList }: ModalProps) {
 
     return (
         <>
-            {addTaskMenu ? (
+            {isTaskMenuOpen ? (
                 <div className='modalShadow'>
                     <div className='modalMenu'>
                         <header>
                             <span>Menu</span>
                             <button className='closeButton' onClick={() => toggleModal(false)}><XCircle /></button>
                         </header>
-                        <section>
+                        <section className='inputs'>
                             <label htmlFor="taskName">Name of Task</label>
-                            <input type="text" id='taskName' placeholder='Put the name here'/>
+                            <input 
+                                type="text" 
+                                id='taskName'
+                                className='modalInput' 
+                                placeholder='Put the name here' 
+                                autoComplete='off'
+                                maxLength={30}
+                                size={30}
+                            />
 
                             <label htmlFor="taskDate">Time to Complete Task</label>
-                            <input type="text" id='taskTime' placeholder='Use HH/MM format'/>
+                            <input 
+                                type="text" 
+                                id='taskTime' 
+                                className='modalInput' 
+                                placeholder='Exemple'
+                            />
 
                             <button className='modalButton' onClick={() => addTask()}>Add new Task</button>
-                            <button className='modalButton' onClick={() => setAddTaskMenu(!addTaskMenu)}>Back</button>
+                            <button className='modalButton' onClick={() => setIsTaskMenuOpen(!isTaskMenuOpen)}>Back</button>
                         </section>
                     </div>
                 </div>
@@ -57,8 +74,8 @@ export function Modal({ toggleModal, updateTasks, taskList }: ModalProps) {
                             <span>Menu</span>
                             <button className='closeButton' onClick={() => toggleModal(false)}><XCircle /></button>
                         </header>
-                        <section>
-                            <button className='modalButton' onClick={() => setAddTaskMenu(!addTaskMenu)}>Add Task</button>
+                        <section className='inputs'>
+                            <button className='modalButton' onClick={() => setIsTaskMenuOpen(!isTaskMenuOpen)}>Add Task</button>
                             <button className='modalButton' onClick={() => deleteAllTasks()}>Remove all tasks</button>
                         </section>
                     </div>
