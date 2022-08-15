@@ -41,11 +41,10 @@ function Page() {
 
             <div>
               {Object.entries(taskList).filter((thisTask) => {
-                if(search === '') {
-                  return taskList              
-                } else if(thisTask[1].title.toLocaleLowerCase().includes(search.toLowerCase())) { 
-                  return thisTask
-                }
+
+                if(search === '') { return taskList } 
+                else if (thisTask[1].title.toLocaleLowerCase().includes(search.toLowerCase())) { return thisTask }
+
               }).map(([key, value]) => 
               <Task 
                 thisTask={value} 

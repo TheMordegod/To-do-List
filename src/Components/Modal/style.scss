@@ -1,6 +1,7 @@
+@use '../../../global.scss';
 $fontSize: 2rem;
 
-.modalShadow{
+.modalShadow {
     position: fixed;
     margin: 0;
     top: 0px;
@@ -10,10 +11,7 @@ $fontSize: 2rem;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.658);
     z-index: 1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include global.centered-element;
 
     .modalMenu {
         overflow: hidden;
