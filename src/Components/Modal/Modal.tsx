@@ -22,9 +22,8 @@ export function Modal({ toggleModal, updateTasks, taskList }: ModalProps) {
                 time: timeInput?.value,
             }
 
-            taskList.push(newTask)
-            updateTasks([...taskList])
-            return console.log(taskList)
+            taskList.push(newTask)           
+            return updateTasks([...taskList])
         }
         else {return alert('Error: Unknown date format!')}
     }
