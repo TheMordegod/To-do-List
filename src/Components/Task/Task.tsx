@@ -16,9 +16,9 @@ export function Task({ thisTask, updateTask, taskList, id }: TaskProps) {
         return thisTask.isCompleted
     })
 
-    const changeState = () => {
+    const changeState = () => {    
+        thisTask.isCompleted = !isComplete
         setIsComplete(!isComplete)
-        thisTask.isCompleted = isComplete
         localStorage.setItem('Task List', JSON.stringify(taskList))
     }
 

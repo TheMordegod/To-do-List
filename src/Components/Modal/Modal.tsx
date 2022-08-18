@@ -59,7 +59,7 @@ export function Modal({ toggleModal, updateTasks, taskList }: ModalProps) {
                                 type="text" 
                                 id='taskTime' 
                                 className='modalInput' 
-                                placeholder='Exemple'
+                                placeholder='Exemple: 12:30'
                             />
 
                             <button className='modalButton' onClick={() => addTask()}>Add new Task</button>
