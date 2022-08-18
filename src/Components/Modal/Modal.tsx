@@ -20,6 +20,7 @@ export function Modal({ toggleModal, updateTasks, taskList }: ModalProps) {
             let newTask = {
                 title: titleInput?.value,
                 time: timeInput?.value,
+                isCompleted: false,
             }
 
             taskList.push(newTask)           

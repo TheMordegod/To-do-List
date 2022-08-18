@@ -4,9 +4,10 @@ import "./style.scss"
 import { Modal } from "../../Components/Modal/Modal"
 import { useEffect, useState } from "react"
 
-type task = {
+export type task = {
   title: string,
   time: string
+  isCompleted: boolean
 }
 
 function Page() {
