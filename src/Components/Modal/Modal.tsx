@@ -72,7 +72,7 @@ export function Modal({ toggleModal, updateTasks, taskList }: ModalProps) {
                     <div className='modalMenu'>
                         <header>
                             <span>Menu</span>
-                            <button className='closeButton' onClick={() => toggleModal(false)}><XCircle /></button>
+                            <button className='closeButton' onClick={() => toggleModal(false)}><XCircle/></button>
                         </header>
                         <section className='inputs'>
                             <button className='modalButton' onClick={() => setIsTaskMenuOpen(!isTaskMenuOpen)}>Add Task</button>
