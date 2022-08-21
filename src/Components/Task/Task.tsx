@@ -16,19 +16,21 @@ export function Task({ thisTask, updateTask, taskList, id }: TaskProps) {
         return thisTask.isCompleted
     })
 
-    const changeState = () => {    
-        thisTask.isCompleted = !isComplete
-        setIsComplete(!isComplete)
+     const changeState = () => {    
+        setIsComplete(current => {
+            thisTask.isCompleted = !current
+            return !current
+        })      
         localStorage.setItem('Task List', JSON.stringify(taskList))
     }
 
+
     function handleRemoveTask() {
-        taskList.splice(parseInt(id), 1)
-        updateTask([...taskList])
+        updateTask((thisTask: Array<Object>) => thisTask.filter((_, id) => id !== 0));
     }
 
     return (
-        <div className={thisTask.isCompleted ? ("taskContainer complete") : ("taskContainer")}>
+        <div className={isComplete && thisTask.isCompleted ? ("taskContainer complete") : ("taskContainer")}>
             <div className="taskData">
                 <span className="taskName">{thisTask.title}</span>
                 <span className="taskDate">{thisTask.time}</span>
