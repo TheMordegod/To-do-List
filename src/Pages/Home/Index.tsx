@@ -46,13 +46,13 @@ function Page() {
               if (search === '') { return taskList }
               else if (thisTask[1].title.toLocaleLowerCase().includes(search.toLowerCase())) { return thisTask }
 
-            }).map(([key, value]) =>
+            }).map(([index, value]) =>
               <Task
                 thisTask={value}
-                updateTask={setTasks}
+                updateMainTaskList={setTasks}
                 taskList={taskList}
-                id={key}
-                key={key}
+                index={parseInt(index)}
+                key={index}
               />
             )}
           </div>
