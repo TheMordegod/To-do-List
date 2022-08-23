@@ -1,9 +1,9 @@
 {
+  "homepage": "https://themordegod.github.io/To-do-List",
   "name": "todolist",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://themordegod.github.io/To-do-List",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
