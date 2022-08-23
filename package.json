@@ -1,7 +1,7 @@
 {
   "homepage": "themordegod.github.io/To-do-List",
   "name": "todolist",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
