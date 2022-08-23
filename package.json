@@ -1,5 +1,4 @@
 {
-  "homepage": "https://themordegod.github.io/To-do-List/build",
   "name": "todolist",
   "private": true,
   "version": "0.0.0",
@@ -7,9 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "phosphor-react": "^1.4.1",
@@ -21,7 +18,6 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.0",
-    "gh-pages": "^4.0.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.0"
   }
