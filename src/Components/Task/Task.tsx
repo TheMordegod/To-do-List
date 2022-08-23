@@ -46,8 +46,8 @@ export function Task({ thisTask, updateMainTaskList, taskList, index }: TaskProp
                 <span className="taskDate">{thisTask.time}</span>
             </div>
             <div className="taskControls">
-                <button className="taskButton" onClick={() => handleRemoveTask(index)}><Trash size={32} className="taskButton" /></button>
                 <button className="taskButton" onClick={() => toggleComplete()}><Check size={32} className="taskButton" /></button>
+                <button className="taskButton" onClick={() => handleRemoveTask(index)}><Trash size={32} className="taskButton" /></button>
             </div>
         </div>
     )

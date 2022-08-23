@@ -66,17 +66,18 @@ $completed-task-color: rgb(82, 189, 82);
     }
 
     @media screen and (max-width: 539px){
-        flex-direction: column;
         overflow-x: scroll;
+        flex-direction: column;
 
         .taskData{       
             line-break: loose;
             font-size: 20px;
+            text-align: center;
         }
         
         .taskControls {
             width: 100%;
-            justify-content: space-between;
+            justify-content:space-between;
         }
     }
 }
