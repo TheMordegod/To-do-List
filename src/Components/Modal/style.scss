@@ -1,5 +1,6 @@
 @use '../../../global.scss';
-$fontSize: 2rem;
+$Big-Font-Size: 2rem;
+$Small-Font-Size: 16px;
 
 .modalShadow {
     position: fixed;
@@ -25,10 +26,10 @@ $fontSize: 2rem;
         header {
             display: flex;
             justify-content: space-between;
-            font-size: $fontSize;
+            font-size: $Big-Font-Size;
 
             .closeButton {
-                font-size: $fontSize;
+                font-size: $Big-Font-Size;
                 background-color: white;
                 border: none;
                 cursor: pointer;
@@ -70,6 +71,20 @@ $fontSize: 2rem;
                 
                 &:focus {
                     outline: none;
+                }
+            }
+        }
+
+        @media screen and (max-width: 549px) {
+            width: 70%;
+
+            header{
+                font-size: 24px;
+            }
+
+            .inputs {
+                .modalInput {
+                    font-size: $Small-Font-Size;
                 }
             }
         }

@@ -1,6 +1,8 @@
 $incomplete-task-color: rgb(255, 119, 119);
 $completed-task-color: rgb(82, 189, 82);
 
+
+//If task is complete, the color change to green
 .taskContainer.complete {
     background-color: $completed-task-color ;
 
@@ -9,11 +11,9 @@ $completed-task-color: rgb(82, 189, 82);
     }
 
     .taskControls {
-
         .taskButton {
             background-color: rgba(255, 255, 255, 0);
-
-                    
+                
             &:hover{
                 background: lighten($completed-task-color, $amount: 10%);         
             }
@@ -21,6 +21,7 @@ $completed-task-color: rgb(82, 189, 82);
     }
 }
 
+//Default light red color for task card
 .taskContainer { 
     background-color: $incomplete-task-color ;
     display: flex;
@@ -61,6 +62,21 @@ $completed-task-color: rgb(82, 189, 82);
             &:hover {
                 background: lighten($incomplete-task-color, $amount: 10%);         
             }
+        }
+    }
+
+    @media screen and (max-width: 539px){
+        flex-direction: column;
+        overflow-x: scroll;
+
+        .taskData{       
+            line-break: loose;
+            font-size: 20px;
+        }
+        
+        .taskControls {
+            width: 100%;
+            justify-content: space-between;
         }
     }
 }
