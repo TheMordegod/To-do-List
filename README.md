@@ -2,7 +2,7 @@
 
  A simple To do List with add, check and remove commands.
  
- ## Tecnologies
+ ## Technologies
 - Vite
 - HTML
 - SCSS
