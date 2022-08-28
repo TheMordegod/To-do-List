@@ -23,8 +23,8 @@ export function Modal({ toggleModal, updateTasks, taskList }: ModalProps) {
                 isCompleted: false,
             }
 
-                  
-            return updateTasks([...taskList, newTask])
+            toggleModal(false) 
+            return updateTasks([...taskList, newTask])           
         }
         else {return alert('Error: Unknown date format!')}
     }
